@@ -16,6 +16,10 @@
 
 - `npm run start` to run in production mode
 
+## View the app
+
+- Open browser and got to `localhost:3000` to see the index page and you can view all entries or create a new entry from there
+
 ## Future Features
 
 - Add functionality to update and delete entries on the frontend
