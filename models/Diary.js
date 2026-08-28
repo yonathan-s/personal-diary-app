@@ -19,6 +19,14 @@ class Diary{
         
     }
 
+    static async getOneById(id){
+        const res = await db.query('SELECT * FROM diary WHERE diary_id=$1', [id])
+        if(res.rows.length != 1){
+            throw new Error('No entries found')
+        }
+        return new Diary (res.rows[0])
+    }
+
 }
 
 
