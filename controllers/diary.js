@@ -20,5 +20,15 @@ const show = async (req, res) => {
     }
 }
 
+const create = async (req, res) => {
+    try{
+        const data = req.body
+        const newEntry = await Diary.create(data)
+        res.status(201).json(newEntry)
+    } catch(err){
+        res.status(400).json({error: err.message})
+    }
+}
 
-export default {index, show}
+
+export default {index, show, create}

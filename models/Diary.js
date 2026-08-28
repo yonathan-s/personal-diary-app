@@ -27,6 +27,12 @@ class Diary{
         return new Diary (res.rows[0])
     }
 
+    static async create(data){
+        const { title, description } = data
+        const res = await db.query('INSERT INTO diary (title, description) VALUES ($1, $2) RETURNING *;', [title, description])
+        return new Diary(res.rows[0])
+    }
+
 }
 
 
