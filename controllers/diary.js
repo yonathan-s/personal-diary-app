@@ -23,8 +23,9 @@ const show = async (req, res) => {
 const create = async (req, res) => {
     try{
         const data = req.body
+        console.log(data);
         const newEntry = await Diary.create(data)
-        res.status(201).json(newEntry)
+        res.status(201).redirect('/entries')
     } catch(err){
         res.status(400).json({error: err.message})
     }

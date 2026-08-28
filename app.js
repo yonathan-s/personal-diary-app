@@ -7,7 +7,7 @@ app.set('views', './views')
 
 import diaryRouter from './routers/diary.js'
 
-
+app.use(express.urlencoded({extended:true}))
 app.use(cors())
 app.use(express.json())
 
