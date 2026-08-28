@@ -33,6 +33,14 @@ class Diary{
         return new Diary(res.rows[0])
     }
 
+    async update(data){
+        const res = await db.query('UPDATE diary SET description = $1 WHERE diary_id = $2 RETURNING *', [data.description, this.diary_id])
+        if (res.rows.length !== 1){
+            throw new Error('Unable to update entry')
+        } 
+        return new Diary(res.rows[0])
+    }
+
 }
 
 
