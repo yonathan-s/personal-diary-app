@@ -2,8 +2,11 @@ import express from 'express'
 import cors from 'cors'
 const app = express()
 
+import diaryRouter from './routers/diary.js'
+
 app.use(cors())
 app.use(express.json())
+
 
 app.get('/', (req, res) => {
     res.json({
@@ -12,4 +15,6 @@ app.get('/', (req, res) => {
     })
 })
 
-export default app
+app.use('/entries', diaryRouter)
+
+export default app;
