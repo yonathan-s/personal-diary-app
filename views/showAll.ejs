@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>All Diary entries </title>
 </head>
 <body>
     
+    <% entries.forEach(entry=>{ %>
+      <p><%= entry.title%> </p>
+      <p><%= entry.description%> </p>
+    <p><%= entry.date%> </p>
+    <% }) %>
 </body>
 </html>
