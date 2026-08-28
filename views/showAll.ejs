@@ -8,9 +8,12 @@
 <body>
     
     <% entries.forEach(entry=>{ %>
-      <p><%= entry.title%> </p>
-      <p><%= entry.description%> </p>
-    <p><%= entry.date%> </p>
+    <div>
+        <h2><%= entry.title%> </h2>
+        <p><%= entry.description%> </p>
+        <p><%= entry.date%> </p>
+    </div>
+    <br>
     <% }) %>
 </body>
 </html>
